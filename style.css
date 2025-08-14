@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+
+nav .nav-links a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+nav .nav-links a:hover{
+    color: #000;
+    font-weight: 600;
+}
+.main-content{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.825), rgba(0, 0, 0, 0.678)), url(./images/tasty-fresh-appetizing-italian-food-ingredients-dark-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    font-size: 20px;
+    padding-left: 150px;
+}
+
+
+
+.main-content h1{
+    font-size: 40px;
+    max-width: 500px;
+}
+
+
+.main-content p{
+    max-width: 400px;
+}
+
+.main-content button{
+    padding: 10px 20px;
+    background-color: #9CAF88;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.nav-user{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-user i{
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.nav-user i:first-child{
+    color: #4d6632;
+}
+
+.nav-user i:last-child{
+    color: red;
+}
