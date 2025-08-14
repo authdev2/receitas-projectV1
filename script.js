@@ -100,14 +100,14 @@ fetch(`h1ttps://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
         let div = document.createElement("div");
         div.classList.add("box-receita");
         div.innerHTML = `
-            <h1>${recipe.title}</h1>
+            <h1>${recipe.title.slice(0, 15)}...</h1>
             <div class="box-receita-img">
               <img src="${recipe.image}" alt="imagem" />
             </div>
             <div class="box-receita-info">
-              <span> ${recipe.readyInMinutes} <i class="fa-solid fa-clock"></i> </span>
-              <span> ${recipe.servings} <i class="fa-solid fa-utensils"></i> </span>
-              <span> ${recipe.healthScore}% <i class="fa-solid fa-star"></i> </span>
+              <span> <i class="fa-solid fa-clock"></i> ${recipe.readyInMinutes} minutos</span>
+              <span> <i class="fa-solid fa-utensils"></i> ${recipe.servings} porções</span>
+              <span> <i class="fa-solid fa-star"></i> ${recipe.healthScore}% saudável</span>
             </div>  
             <div class="box-receita-btn">
               <button class="btn-receita">
@@ -128,9 +128,9 @@ fetch(`h1ttps://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
               <h1>${recipe.title}</h1>
               <p>${recipe.summary}</p>
               <div class="modal-content-info">
-                <span> ${recipe.readyInMinutes} <i class="fa-solid fa-clock"></i> </span>
-                <span> ${recipe.servings} <i class="fa-solid fa-utensils"></i> </span>
-                <span> ${recipe.healthScore}% <i class="fa-solid fa-star"></i> </span>
+                <span> <i class="fa-solid fa-clock"></i> ${recipe.readyInMinutes} </span>
+                <span> <i class="fa-solid fa-utensils"></i> ${recipe.servings} </span>
+                <span> <i class="fa-solid fa-star"></i> ${recipe.healthScore}% </span>
               </div>
               <button class="btn-receita-favoritar">
             </div>
