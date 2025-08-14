@@ -93,30 +93,50 @@ fetch(`h1ttps://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
 
   function RandomReceitas(){
     let boxReceitaInfo = document.querySelector(".receita-content");
-    fetch(`1https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
+    fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
     .then((response) => response.json())
     .then((data) => {
       data.recipes.forEach((recipe) => {
         let div = document.createElement("div");
         div.classList.add("box-receita");
         div.innerHTML = `
-          <h1>${recipe.title}</h1>
-          <div class="box-receita-img">
-            <img src="${recipe.image}" alt="">
-          </div>
-          <div class="box-receita-info">
-           <span>
-            ${recipe.readyInMinutes} minutos
-           </span>
-           <span>
-            ${recipe.servings} porções
-           </span>
-           <span>
-            ${recipe.healthScore}% saudável
-           </span>
-           <button class="btn-receita">Ver receita</button>
-          </div>
+            <h1>${recipe.title}</h1>
+            <div class="box-receita-img">
+              <img src="${recipe.image}" alt="imagem" />
+            </div>
+            <div class="box-receita-info">
+              <span> ${recipe.readyInMinutes} <i class="fa-solid fa-clock"></i> </span>
+              <span> ${recipe.servings} <i class="fa-solid fa-utensils"></i> </span>
+              <span> ${recipe.healthScore}% <i class="fa-solid fa-star"></i> </span>
+            </div>  
+            <div class="box-receita-btn">
+              <button class="btn-receita">
+                <i class="fa-solid fa-hand-pointer"></i>
+                Ver receita</button>
+              <button class="btn-receita-favoritar">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
         `;
+        let btnReceita = document.querySelector(".btn-receita");
+        btnReceita.addEventListener("click", () => {
+          console.log(recipe);
+          let createModal = document.createElement("div");
+          createModal.classList.add("modal");
+          createModal.innerHTML = `
+            <div class="modal-content">
+              <h1>${recipe.title}</h1>
+              <p>${recipe.summary}</p>
+              <div class="modal-content-info">
+                <span> ${recipe.readyInMinutes} <i class="fa-solid fa-clock"></i> </span>
+                <span> ${recipe.servings} <i class="fa-solid fa-utensils"></i> </span>
+                <span> ${recipe.healthScore}% <i class="fa-solid fa-star"></i> </span>
+              </div>
+              <button class="btn-receita-favoritar">
+            </div>
+          `;
+        });
+
         boxReceitaInfo.appendChild(div);
       });
     })
