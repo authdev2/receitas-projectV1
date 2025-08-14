@@ -1,89 +1,269 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  margin-right: 20px;
+  color: #4b5563;
+}
+
+nav .nav-links a:hover {
+  color: #000;
+  font-weight: 600;
+}
+.main-content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.825), rgba(0, 0, 0, 0.678)),
+    url(./images/image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 95vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  font-size: 20px;
+  padding-left: 150px;
+}
+
+.main-content h1 {
+  font-size: 40px;
+  max-width: 500px;
+}
+
+.main-content p {
+  max-width: 400px;
+}
+
+.main-content button {
+  padding: 20px 40px;
+  background-color: #e74c3c;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.nav-user {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-user i {
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.nav-user i:first-child {
+  color: #e74c3c;
+}
+
+.nav-user i:last-child {
+  color: red;
+}
+
+.receita-destaque {
+  margin-top: 100px;
+  height: 80vh;
+}
+
+.receita-destaque-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.receita-left h1 {
+  max-width: 450px;
+  color: #4b5563;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 35px;
+}
+
+.receita-dia-box{
+    margin-bottom: 40px;
+}
+
+.receita-left p {
+  max-width: 400px;
+  color: #666;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+.receita-left span {
+  color: #1a0906;
+  font-weight: 600;
+}
+
+.receita-left button {
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.receita-destaque-info span {
+  margin-right: 20px;
+}
+
+.receita-right .receita-destaque-img {
+  width: 500px;
+  border-radius: 40px;
+}
+
+.receita-left .receita-destaque-span {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.sobre-nos-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  height: 100vh;
+}
+.sobre-nos-left h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.sobre-nos-left p {
+  max-width: 600px;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 30px;
+}
+
+.avaliacoes {
+  display: flex;
+  align-items: center;
+}
+
+.avaliacao {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+  margin-right: 20px;
+  padding: 10px 25px;
+  text-align: center;
+  border-radius: 20px;
+}
+.avaliacoes span {
+  display: block;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sobre-nos-right img {
+  border-radius: 40px;
 }
 
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.box-info{
     padding: 10px 20px;
-    background-color: #fff;
+    border: 1px solid #e74c3c;
+    background-color: #f9e9e7;
 }
 
-nav .nav-links a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    margin-right: 20px;
+.box-info i{
+    color: #e74c3c;
 }
 
-nav .nav-links a:hover{
-    color: #000;
-    font-weight: 600;
+.box-info span{
+    color: #3e3c41;
+    margin-left: 10px;
 }
-.main-content{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.825), rgba(0, 0, 0, 0.678)), url(./images/tasty-fresh-appetizing-italian-food-ingredients-dark-background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 90vh;
-    color: #fff;
+
+.receita-destaque-info-box{
+    display: flex;
+    gap: 20px;
+}
+
+.footer-content{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    font-size: 20px;
-    padding-left: 150px;
+    align-items: center;
+    background-color: #f9e9e7;
+    height: 30vh;
+    color: rgb(5, 5, 5);
+    border: 1px solid #e74c3c;
 }
 
-
-
-.main-content h1{
-    font-size: 40px;
-    max-width: 500px;
+.footer-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-.main-content p{
-    max-width: 400px;
+.footer-left h2{
+    color: black;
+    font-weight: 700;
 }
 
-.main-content button{
-    padding: 10px 20px;
-    background-color: #9CAF88;
-    border: none;
-    color: #fff;
+.footer-left p{
+    max-width: 300px;
+    color: black;
+    line-height: 30px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer-right{
+    display: flex;
+    gap: 150px;
+}
+
+.footer-right ul li{
+    list-style: none;
     font-weight: 600;
     font-size: 17px;
-    border-radius: 5px;
 }
 
-.nav-user{
+.footer-right ul li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.footer-social-media{
     display: flex;
-    gap: 20px;
-}
-
-.nav-user i{
-    font-size: 17px;
-    cursor: pointer;
-}
-
-.nav-user i:first-child{
-    color: #4d6632;
-}
-
-.nav-user i:last-child{
-    color: red;
+    gap: 30px;
 }
