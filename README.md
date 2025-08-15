@@ -1,103 +1,94 @@
-# Culinária Gourmet - Receitas Exclusivas
+# 🍳 Livro de Receitas - Projeto V1
 
-Um site moderno e profissional para compartilhar receitas gourmet dos melhores chefs do mundo.
+Um site moderno e profissional para descobrir receitas deliciosas, construído com HTML, CSS e JavaScript.
 
-## 🎨 Melhorias de Design Implementadas
+## ✨ Características
 
-### Design System Profissional
-- **Sistema de Cores**: Paleta de cores sofisticada com variáveis CSS customizadas
-- **Tipografia**: Combinação de fontes Inter (corpo) e Playfair Display (títulos)
-- **Espaçamentos**: Sistema de espaçamento consistente usando variáveis CSS
-- **Sombras**: Sistema de sombras em camadas para profundidade visual
+### 🎨 **Design Profissional**
+- Interface moderna com gradientes e sombras suaves
+- Animações e transições fluidas
+- Layout responsivo para todos os dispositivos
+- Tipografia elegante com fonte Poppins
 
-### Componentes Modernos
-- **Navegação Fixa**: Header com efeito de blur e transparência
-- **Botões Interativos**: Efeitos hover com gradientes e animações
-- **Cards Elegantes**: Design de cartões com sombras e bordas arredondadas
-- **Loading States**: Indicadores de carregamento com animações suaves
+### 🔍 **Funcionalidades**
+- **Receita do Dia**: Destaque automático de receitas aleatórias
+- **Busca por Categoria**: Filtros para Fish, Beef, Pork e Chicken
+- **Pesquisa Personalizada**: Campo de busca com ícones
+- **Modal de Detalhes**: Visualização completa das receitas
+- **Sistema de Favoritos**: Botão para salvar receitas favoritas
 
-### Experiência do Usuário
-- **Animações Suaves**: Transições e animações CSS para melhor engajamento
-- **Responsividade**: Design totalmente responsivo para todos os dispositivos
-- **Acessibilidade**: Foco em elementos interativos e contraste adequado
-- **Performance**: Otimizações de carregamento e renderização
+### 📱 **Responsividade**
+- Desktop: Layout em grid com múltiplas colunas
+- Tablet: Adaptação automática para telas médias
+- Mobile: Design otimizado para smartphones
 
-### Funcionalidades JavaScript
-- **API Integration**: Integração com Spoonacular API para receitas dinâmicas
-- **Error Handling**: Tratamento robusto de erros com feedback visual
-- **Loading States**: Estados de carregamento informativos
-- **Smooth Scrolling**: Navegação suave entre seções
+## 🛠️ Tecnologias Utilizadas
 
-## 🚀 Tecnologias Utilizadas
+- **HTML5**: Estrutura semântica e acessível
+- **CSS3**: 
+  - Flexbox e Grid para layouts
+  - Gradientes e sombras modernas
+  - Animações CSS3
+  - Media queries para responsividade
+- **JavaScript**: 
+  - Fetch API para requisições
+  - Manipulação dinâmica do DOM
+  - Event listeners interativos
+- **APIs**: Spoonacular para dados de receitas
 
-- **HTML5**: Estrutura semântica moderna
-- **CSS3**: Variáveis CSS, Grid, Flexbox, Animações
-- **JavaScript ES6+**: Async/await, Fetch API, DOM Manipulation
-- **Font Awesome**: Ícones profissionais
-- **Google Fonts**: Tipografia de alta qualidade
+## 🎯 Melhorias Implementadas
 
-## 📱 Responsividade
+### **HTML**
+- ✅ Estrutura semântica melhorada
+- ✅ Ícones FontAwesome para categorias
+- ✅ Classes mais organizadas e descritivas
+- ✅ Wrapper para input de busca com ícone
 
-O design é totalmente responsivo e otimizado para:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (320px - 767px)
+### **CSS**
+- ✅ Design system consistente
+- ✅ Gradientes e cores harmoniosas
+- ✅ Efeitos hover profissionais
+- ✅ Cards com sombras e animações
+- ✅ Modal responsivo com backdrop blur
+- ✅ Botões com estados visuais
 
-## 🎯 Características Principais
+### **JavaScript**
+- ✅ Correção de URL da API
+- ✅ Estrutura de dados otimizada
+- ✅ Event handlers melhorados
 
-### Visual
-- Design minimalista e elegante
-- Gradientes sutis e sombras profissionais
-- Animações suaves e transições
-- Paleta de cores harmoniosa
-
-### Funcional
-- Carregamento dinâmico de receitas
-- Navegação intuitiva
-- Estados de loading e erro
-- Interações responsivas
-
-### Técnico
-- Código limpo e organizado
-- Variáveis CSS para consistência
-- JavaScript modular e reutilizável
-- Performance otimizada
-
-## 🔧 Como Usar
+## 🚀 Como Usar
 
 1. Clone o repositório
-2. Abra `index.html` no navegador
-3. O site carregará automaticamente uma receita aleatória
-4. Navegue pelas seções usando o menu superior
+2. Abra o `index.html` no navegador
+3. Explore as receitas por categoria ou use a busca
+4. Clique em "Ver receita" para ver detalhes completos
 
-## 📝 Estrutura do Projeto
+## 📊 Estrutura do Projeto
 
 ```
 receitas-projectV1/
 ├── index.html          # Página principal
-├── style.css           # Estilos CSS profissionais
-├── script.js           # Funcionalidades JavaScript
+├── style.css           # Estilos CSS
+├── script.js           # Lógica JavaScript
 ├── images/             # Imagens do projeto
 └── README.md           # Documentação
 ```
 
 ## 🎨 Paleta de Cores
 
-- **Primary**: #2D3436 (Cinza escuro)
-- **Secondary**: #636E72 (Cinza médio)
-- **Accent**: #E74C3C (Vermelho)
-- **Background**: #F8F9FA (Cinza claro)
-- **Text**: #2D3436 (Cinza escuro)
+- **Primária**: `#e74c3c` (Vermelho)
+- **Secundária**: `#c0392b` (Vermelho escuro)
+- **Neutra**: `#2c3e50` (Azul escuro)
+- **Fundo**: `#f8f9fa` (Cinza claro)
+- **Texto**: `#6c757d` (Cinza médio)
 
-## 🔮 Próximas Melhorias
+## 📱 Breakpoints Responsivos
 
-- [ ] Modal para detalhes completos das receitas
-- [ ] Sistema de favoritos
-- [ ] Filtros por categoria
-- [ ] Busca de receitas
-- [ ] Modo escuro
-- [ ] PWA (Progressive Web App)
+- **Desktop**: > 768px
+- **Tablet**: 768px - 480px
+- **Mobile**: < 480px
 
 ---
 
-Desenvolvido com ❤️ para amantes da culinária gourmet.
+Desenvolvido com ❤️ para amantes da culinária!

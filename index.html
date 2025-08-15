@@ -21,7 +21,7 @@
         <a href="#">Receitas</a>
       </div>
       <div class="nav-user">
-        <i class="fa-solid fa-heart"></i>
+        <!-- <i class="fa-solid fa-heart"></i> -->
       </div>
     </nav>
 
@@ -94,63 +94,108 @@
       <div class="receita-destaque-image"></div>
     </section>
 
-    <section>
+    <div class="receitas-section">
       <div class="receita-container">
-        <div class="title-receita">
-          <h2>Receitas Deliciosas</h2>
+        <div class="section-header">
+          <h2 class="title-receita">Receitas Deliciosas</h2>
+          <p class="section-subtitle">Descubra receitas incríveis para todos os gostos</p>
         </div>
-        <div class="categorias">
-          <div class="categoria">
-            <button onclick="SearchReceitas('Fish')">Fish</button>
-          </div>
-
-          <div class="categoria">
-            <button onclick="SearchReceitas('Beef')">Beef</button>
-          </div>
-
-          <div class="categoria">
-            <button onclick="SearchReceitas('Pork')">Pork</button>
-          </div>
-
-          <div class="categoria">
-            <button onclick="SearchReceitas('Chicken')">Chicken</button>
-          </div>
-        </div>
-        <div class="input-receita">
-          <input
-            class="input-receita-search"
-            type="text"
-            placeholder="Pesquisar receita"
-          />
-          <button class="btn-receita-search">
-            <span>Pesquisar</span>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-
-        <div class="receita-content">
-          <!-- Javascript -->
-
-          <div class="box-receita">
-            <h1>Massa de lasanha</h1>
-            <div class="box-receita-img">
-              <img src="./images/woman-cooking-kitchen.jpg" alt="imagem" />
+        
+        <div class="search-section">
+          <h3 class="title-receita-atalhos">Atalhos para receitas:</h3>
+          <div class="categorias">
+            <div class="categoria">
+              <button class="categoria-btn" onclick="SearchReceitas('Fish')">
+                <i class="fa-solid fa-fish"></i>
+                Fish
+              </button>
             </div>
-            <div class="box-receita-info">
-              <span> 10 <i class="fa-solid fa-clock"></i> </span>
-              <span> 4 <i class="fa-solid fa-utensils"></i> </span>
-              <span> 80% <i class="fa-solid fa-star"></i> </span>
+
+            <div class="categoria">
+              <button class="categoria-btn" onclick="SearchReceitas('Beef')">
+                <i class="fa-solid fa-drumstick-bite"></i>
+                Beef
+              </button>
             </div>
-            <div class="box-receita-btn">
-              <button class="btn-receita">
-                <i class="fa-solid fa-hand-pointer"></i>
-                Ver receita</button>
-              <button class="btn-receita-favoritar">
-                <i class="fa-solid fa-heart"></i>
+
+            <div class="categoria">
+              <button class="categoria-btn" onclick="SearchReceitas('Pork')">
+                <i class="fa-solid fa-bacon"></i>
+                Pork
+              </button>
+            </div>
+
+            <div class="categoria">
+              <button class="categoria-btn" onclick="SearchReceitas('Chicken')">
+                <i class="fa-solid fa-kiwi-bird"></i>
+                Chicken
               </button>
             </div>
           </div>
+          
+          <div class="input-receita">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input
+                class="input-receita-search"
+                type="text"
+                placeholder="Pesquisar receita..."
+              />
+            </div>
+            <button class="btn-receita-search">
+              <span>Pesquisar</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
+
+        <div class="receita-content">
+            <div class="box-receita">
+              <div class="box-receita-img">
+              <img src="${recipe.image}" alt="imagem" />
+              </div>
+                  <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
+                  <div class="box-receita-info">
+                    <span> <i class="fa-solid fa-clock"></i> ${
+                      recipe.readyInMinutes
+                    } minutos</span>
+                  </div>  
+                  <div class="box-receita-btn">
+                    <button class="btn-receita" data-id="${recipe.id}">
+                      <i class="fa-solid fa-hand-pointer"></i>
+                      Ver receita</button>
+                    <button class="btn-receita-favoritar">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  </div>
+              </div>
+              <div class="box-receita">
+                <div class="box-receita-img">
+                <img src="${recipe.image}" alt="imagem" />
+                </div>
+                    <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
+                    <div class="box-receita-info">
+                      <span> <i class="fa-solid fa-clock"></i> ${
+                        recipe.readyInMinutes
+                      } minutos</span>
+                    </div>  
+                    <div class="box-receita-btn">
+                      <button class="btn-receita" data-id="${recipe.id}">
+                        <i class="fa-solid fa-hand-pointer"></i>
+                        Ver receita</button>
+                      <button class="btn-receita-favoritar">
+                        <i class="fa-solid fa-heart"></i>
+                      </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+            <div class="modal-receita-container">
+              <!-- Javascript -->
+            </div>
       </div>
     </section>
 
