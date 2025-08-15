@@ -1,4 +1,4 @@
-const apiKey = "cb880b0e01b44c0a9f8799e352301e27";
+const apiKey = "2eabe7358cbf40fb9b8fbbf1457849c6";
 
 let receita = document.querySelector(".receita-destaque-info");
 let receitaRight = document.querySelector(".receita-right");
@@ -114,7 +114,6 @@ fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
                             </span>
                         </div>
                     </div>
-                    <button>Ver receitas</button>
         
         `;
 
