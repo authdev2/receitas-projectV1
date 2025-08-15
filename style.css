@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 
 * {
   padding: 0;
@@ -33,7 +35,7 @@ nav .nav-links a:hover {
 
 .main-content {
   background-image: linear-gradient(rgba(0, 0, 0, 0.825), rgba(0, 0, 0, 0.678)),
-    url(./images/image.png);
+    url(./images/top-view-cut-sliced-apricots-with-knife-note-pad-with-pinecone-wooden-background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -214,7 +216,11 @@ nav .nav-links a:hover {
 
 .receita-destaque-info-box {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 400px;
   gap: 10px;
+  /* margin-right: 100px; */
 }
 
 .receitas-section {
@@ -254,10 +260,10 @@ nav .nav-links a:hover {
 }
 
 .search-section {
-background: #ebebeb3b;
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 50px;
+  background: #ebebeb3b;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 50px;
 }
 
 .title-receita-atalhos {
@@ -331,8 +337,6 @@ background: #ebebeb3b;
   background: #f8f9fa;
 }
 
-
-
 .input-receita-search::placeholder {
   color: #6c757d;
   font-weight: 400;
@@ -359,14 +363,14 @@ background: #ebebeb3b;
 }
 
 .receita-content {
-  display: grid;
+  flex-wrap: wrap;
+  display: flex;
   grid-template-columns: repeat(3, 320px);
   gap: 30px;
   padding: 20px 0;
 }
 
 .box-receita {
-  background: white;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -374,8 +378,8 @@ background: #ebebeb3b;
   width: 300px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
-
 
 .box-receita-img {
   position: relative;
@@ -493,17 +497,145 @@ background: #ebebeb3b;
 }
 
 .modal-receita {
-  background: white;
+  background: #f2f2f2;
   border-radius: 20px;
-  padding: 30px;
   width: 90%;
-  max-width: 800px;
-  max-height: 80vh;
+  max-width: 1900px;
+  height: 90vh;
   overflow-y: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px 0 #6b6b6bf8;
+  backdrop-filter: blur(10px);
+}
+
+.principal-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+  text-align: center;
+  font-family: "Tai Heritage Pro", serif;
+  font-weight: 500;
+}
+
+.info-receita {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.info-receita span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #d03838;
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Syne", sans-serif;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  height: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 30px;
+  background-color: #efefef;
+  box-shadow: 3px 3px 5px 1px #c4c4c4;
+  /* padding: 50px; */
+}
+
+.left-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.left-info button {
+  background-color: #d03838;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Syne", sans-serif;
+  cursor: pointer;
+}
+
+.description p {
+  font-size: 16px;
+  color: #626262;
+  font-family: "Syne", sans-serif;
+  line-height: 30px;
+  font-weight: 500;
+  max-width: 900px;
+  text-align: center;
+}
+
+.ingredients-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.ingredients-container span {
+  margin-top: 15px;
+  background-color: #dddddd;
+  padding: 10px 70px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px 1px #c4c4c4;
+  margin-bottom: 15px;
+}
+
+.preparation-container p {
+  font-size: 16px;
+  color: #626262;
+  font-family: "Syne", sans-serif;
+  line-height: 30px;
+  font-weight: 500;
+  max-width: 900px;
+  text-align: center;
+}
+
+.additional-info-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 15px;
+  padding-bottom: 50px;
+}
+.additional-info-container span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #9c9c9c;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.additional-info-container span i {
+  color: #d03838;
+  border: 1px solid #d03838;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.right-info img {
+  width: 383px;
+  height: 255px;
 }
 
 .btn-receita-close {
