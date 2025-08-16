@@ -1,3 +1,14 @@
+✨ Características Principais:
+
+🎨 Sistema de busca avançado com filtros por categoria (🐟 Peixe, 🥩 Carne, 🥩 Porco, 🥗 Salada)
+
+🌐 API integrada (Spoonacular) para receitas reais e atualizadas
+
+📩 Modal interativo com detalhes completos das receitas
+
+🎯 Design elegante e atrativo
+
+
 <img width="1837" height="928" alt="image" src="https://github.com/user-attachments/assets/ff032aa5-a674-49d6-8d48-68f22fd5f212" />
 <img width="1267" height="654" alt="image" src="https://github.com/user-attachments/assets/eb064e3e-2309-414f-9400-dd7c93ee7c35" />
 <img width="1096" height="612" alt="image" src="https://github.com/user-attachments/assets/2130bf07-f18c-45fe-b3b9-f3617ab771d7" />
