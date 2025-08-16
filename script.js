@@ -1,4 +1,4 @@
-const apiKey = "cb880b0e01b44c0a9f8799e352301e27";
+const apiKey = "4d91978896c44dd687c57adef2c78ed6";
 
 let receita = document.querySelector(".receita-destaque-info");
 let receitaRight = document.querySelector(".receita-right");
@@ -144,7 +144,7 @@ function SearchReceitas(query) {
 
 function RandomReceitas() {
   let boxReceitaInfo = document.querySelector(".receita-content");
-  fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
+  fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`)
     .then((response) => response.json())
     .then((data) => {
       data.recipes.forEach((recipe) => {

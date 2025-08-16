@@ -186,7 +186,7 @@ nav .nav-links a:hover {
 
 .receita-left .receita-destaque-span {
   padding: 10px 40px;
-  background: #FE9A19;
+  background: #fe9a19;
   color: white;
   /* border-radius: 10px; */
   font-weight: 600;
@@ -197,12 +197,12 @@ nav .nav-links a:hover {
 
 .box-info {
   padding: 10px 20px;
-  border: 1px solid #FE9A19;
+  border: 1px solid #fe9a19;
   background-color: #ff91032e;
 }
 
 .box-info i {
-  color: #FE9A19;
+  color: #fe9a19;
 }
 
 .box-info span {
@@ -222,103 +222,16 @@ nav .nav-links a:hover {
 .receitas-section {
   padding: 80px 0;
   min-height: 100vh;
-}
-
-.receita-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.title-receita {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #FE9A19;
-  margin-bottom: 15px;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #6c757d;
-  font-weight: 400;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.search-section {
-  border-radius: 20px;
-  padding: 40px;
-  margin-bottom: 50px;
-}
-
-.title-receita-atalhos {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.input-receita {
-  display: flex;
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.search-input-wrapper {
-  position: relative;
-  flex: 1;
-}
-
-.search-icon {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6c757d;
-  font-size: 1.1rem;
-}
-
-.input-receita-search {
-  width: 100%;
-  padding: 18px 20px 18px 50px;
-  border: 2px solid #e9ecef;
-  border-radius: 50px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: #f8f9fa;
-}
-
-.input-receita-search::placeholder {
-  color: #6c757d;
-  font-weight: 400;
-}
-
-.btn-receita-search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 18px 30px;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  /* background-image: url(./images/ingredientes-alimentares-italianos.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
 }
 
 .receita-content {
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   grid-template-columns: repeat(3, 320px);
   gap: 30px;
   padding: 20px 0;
@@ -398,7 +311,7 @@ nav .nav-links a:hover {
   gap: 8px;
   padding: 12px 20px;
   border: none;
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: black;
   color: white;
   border-radius: 25px;
   font-weight: 600;
@@ -422,6 +335,157 @@ nav .nav-links a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.receitas-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 40px;
+  position: relative;
+}
+
+.info-search h2 {
+  color: #2c3e50;
+  font-size: 42px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.info-search h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #fe9a19, #e74c3c);
+  border-radius: 2px;
+}
+
+.info-search p {
+  color: #6c757d;
+  font-size: 20px;
+  margin-bottom: 80px;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 500px;
+  font-weight: 500;
+}
+
+.search-input-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input-input button {
+  padding: 10px 20px;
+  background-color: black;
+  border: none;
+}
+
+.search-input-input button i {
+  color: white;
+}
+
+.search-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.search-input input {
+  padding: 15px 25px;
+  width: 500px;
+  border-radius: 25px;
+  border: 2px solid #e9ecef;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-input button {
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-input-buttons {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.image-rotate {
+  width: 500px;
+  height: 500px;
+}
+
+.search-input-buttons button {
+  background: white;
+  padding: 12px 25px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 2px solid #e9ecef;
+  border-radius: 20px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-input-buttons button:hover {
+  background: linear-gradient(135deg, #fe9a19, #e74c3c);
+  color: white;
+  border-color: #fe9a19;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(254, 154, 25, 0.3);
+}
+.image-rotate {
+  animation: rotate 10s linear infinite;
+  position: relative;
+  top: -130px;
+}
+
+/* @keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
 
 .modal-receita-container {
   display: none;
@@ -471,7 +535,7 @@ nav .nav-links a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #d03838;
+  background-color: black;
   border-radius: 20px;
   padding: 8px 15px;
   color: white;
@@ -503,7 +567,7 @@ nav .nav-links a:hover {
 }
 
 .left-info button {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: black;
   padding: 15px 30px;
   border: none;
   border-radius: 25px;
@@ -555,7 +619,7 @@ nav .nav-links a:hover {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: #FE9A19;
   border-radius: 2px;
 }
 
@@ -573,7 +637,7 @@ nav .nav-links a:hover {
   padding: 20px 25px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #e74c3c;
+  border-left: 4px solid #FE9A19;
   position: relative;
   transition: all 0.3s ease;
   font-weight: 500;
@@ -587,7 +651,7 @@ nav .nav-links a:hover {
   left: -12px;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: #FE9A19;
   color: white;
   width: 24px;
   height: 24px;
@@ -637,8 +701,8 @@ nav .nav-links a:hover {
 }
 
 .additional-info-container span i {
-  color: #d03838;
-  border: 1px solid #d03838;
+  color: #FE9A19;
+  border: 1px solid #000000;
   padding: 5px;
   border-radius: 50%;
 }
@@ -658,7 +722,7 @@ nav .nav-links a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: #e74c3c;
+  background: black;
   color: white;
   border: none;
   width: 40px;
@@ -736,18 +800,18 @@ nav .nav-links a:hover {
   color: #2c3e50;
   margin-bottom: 40px;
   position: relative;
-  color: #FE9A19;
+  color: #fe9a19;
 }
 
 .collaborations-container h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background-color: #FE9A19;
+  background-color: #fe9a19;
 
   border-radius: 2px;
 }
@@ -762,7 +826,6 @@ nav .nav-links a:hover {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
- 
 }
 
 .colaborado {
@@ -775,7 +838,7 @@ nav .nav-links a:hover {
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background-color: #FE9A19;
+  background-color: #fe9a19;
   color: white;
   font-weight: 600;
 }

@@ -24,19 +24,26 @@
 
     <section>
       <div class="main-content">
-      
-      <div class="left-content">
-        <span class="left-content-span">Tens receitas premium de <span class="left-content-free">GRAÇA!</span></span>
+        <div class="left-content">
+          <span class="left-content-span"
+            >Tens receitas premium de
+            <span class="left-content-free">GRAÇA!</span></span
+          >
 
-        <div class="all-info-left">
-          <h1>Ideias saborosas
-            para o teu dia a dia</h1>
+          <div class="all-info-left">
+            <h1>Ideias saborosas para o teu dia a dia</h1>
 
-            <p>Descobre as melhores receitas para o teu dia a dia. Temos receitas para todos os gostos e para todas as ocasiões da tua vida e da tua família e tambem para o teu pet, sabias que comida para os pets é mais saudável e nutritiva?</p>
-        
+            <p>
+              Descobre as melhores receitas para o teu dia a dia. Temos receitas
+              para todos os gostos e para todas as ocasiões da tua vida e da tua
+              família e tambem para o teu pet, sabias que comida para os pets é
+              mais saudável e nutritiva?
+            </p>
+
             <div class="btns-info-left">
               <button>Ver receitas</button>
-              <a href="#">Saiba mais
+              <a href="#"
+                >Saiba mais
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -44,53 +51,53 @@
             <div class="quantity-reviews">
               <div class="quantity-reviews-item">
                 <span class="orange-number">+100</span>
-                <br>
+                <br />
                 <span class="text-reviews">Receitas</span>
               </div>
               <div class="quantity-reviews-item">
                 <span class="orange-number">+100</span>
-                <br>
+                <br />
                 <span class="text-reviews">Receitas</span>
               </div>
               <div class="quantity-reviews-item">
                 <span class="orange-number">+100</span>
-                <br>
+                <br />
                 <span class="text-reviews">Receitas</span>
               </div>
             </div>
-
           </div>
+        </div>
+
+        <div class="right-content">
+          <img src="./images/mainImage.png" alt="" />
+        </div>
       </div>
 
-      <div class="right-content">
-        <img src="./images/mainImage.png" alt="">
-      </div>
-    </div>
-
-    <div class="collaborations-container">
-      <h3>Parceiros e Colaborações</h3>
-      <div class="colaborados">
-        <div class="colaborado">
-          <span>
+      <div class="collaborations-container">
+        <h3>Parceiros e Colaborações</h3>
+        <div class="colaborados">
+          <div class="colaborado">
+            <span>
+              <i class="fa-regular fa-pen-to-square"></i>
+              TasteFoods
+            </span>
+          </div>
+          <div class="colaborado">
+            <span>
+              <i class="fa-regular fa-pen-to-square"></i>
+              Yummy Foods</span
+            >
+          </div>
+          <div class="colaborado">
             <i class="fa-regular fa-pen-to-square"></i>
-            TasteFoods
-          </span>
-        </div>
-        <div class="colaborado">
-          <span>
+            Uber eats
+          </div>
+          <div class="colaborado">
             <i class="fa-regular fa-pen-to-square"></i>
-            Yummy Foods</span>
-        </div>
-        <div class="colaborado">
-          <i class="fa-regular fa-pen-to-square"></i>
-          Uber eats
-        </div>
-        <div class="colaborado">
-          <i class="fa-regular fa-pen-to-square"></i>
-          <span>Glovo</span>
+            <span>Glovo</span>
+          </div>
         </div>
       </div>
-    </div>
     </section>
 
     <section class="receita-destaque">
@@ -112,168 +119,41 @@
       <div class="receita-destaque-image"></div>
     </section>
 
-    <div class="receitas-section">
-      <div class="receita-container">
-        <div class="section-header">
-          <h2 class="title-receita">Receitas Deliciosas</h2>
-          <p class="section-subtitle">Descubra receitas incríveis para todos os gostos</p>
-        </div>
-        
-        <div class="search-section">
-          <h3 class="title-receita-atalhos">Atalhos para receitas:</h3>
-          
-          <div class="input-receita">
-            <div class="search-input-wrapper">
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <section class="receitas-section">
+      <div class="receitas-container">
+        <div class="info-search">
+          <h2>Receitas Deliciosas</h2>
+          <p>Descubra receitas incríveis para todos os gostos</p>
+          <div class="search-input">
+            <h3>Pesquisa personalizada</h3>
+            <div class="search-input-input">
               <input
                 class="input-receita-search"
                 type="text"
                 placeholder="Pesquisar receita..."
               />
+              <button class="btn-receita-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
             </div>
-            <button class="btn-receita-search">
-              <span>Pesquisar</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
+
+            <h3>Pesquisa rápida</h3>
+            <div class="search-input-buttons">
+              <button onclick="SearchReceitas('Fish')">Peixe</button>
+              <button onclick="SearchReceitas('Beef')">Carne</button>
+              <button onclick="SearchReceitas('Pork')">Porco</button>
+              <button onclick="SearchReceitas('Salad')">Salada</button>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="receita-content">
-            <!-- <div class="box-receita">
-              <div class="box-receita-img">
-              <img src="${recipe.image}" alt="imagem" />
-              </div>
-                  <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
-                  <div class="box-receita-info">
-                    <span> <i class="fa-solid fa-clock"></i> ${
-                      recipe.readyInMinutes
-                    } minutos</span>
-                  </div>  
-                  <div class="box-receita-btn">
-                    <button class="btn-receita" data-id="${recipe.id}">
-                      <i class="fa-solid fa-hand-pointer"></i>
-                      Ver receita</button>
-                    <button class="btn-receita-favoritar">
-                      <i class="fa-solid fa-heart"></i>
-                    </button>
-                  </div>
-              </div> -->
-              <!-- <div class="box-receita">
-                <div class="box-receita-img">
-                <img src="${recipe.image}" alt="imagem" />
-                </div>
-                    <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
-                    <div class="box-receita-info">
-                      <span> <i class="fa-solid fa-clock"></i> ${
-                        recipe.readyInMinutes
-                      } minutos</span>
-                    </div>  
-                    <div class="box-receita-btn">
-                      <button class="btn-receita" data-id="${recipe.id}">
-                        <i class="fa-solid fa-hand-pointer"></i>
-                        Ver receita</button>
-                      <button class="btn-receita-favoritar">
-                        <i class="fa-solid fa-heart"></i>
-                      </button>
-                    </div>
-                </div>
-              </div> -->
-            </div>
+      <div class="receita-content">
+        <!-- Javascript -->
+      </div>
 
-          </div>
-
-            <div class="modal-receita-container">
-
-              <!-- <div class="modal-receita"> -->
-                <!-- <button class="btn-receita-close">
-                  <i class="fa-solid fa-xmark"></i>
-                </button>
-
-                <div class="principal-info">
-                  <h1>Cherry ice cream</h1>
-
-                  <div class="info-receita">
-                    <span>
-                      <i class="fa-solid fa-clock"></i>
-                      10 minutos
-                    </span>
-
-                    <span>
-                      <i class="fa-solid fa-users"></i>
-                      4 porções
-                    </span>
-
-                    <span>
-                      <i class="fa-solid fa-users"></i>
-                     10% saudável
-                    </span>
-                  </div>
-                </div>
-
-
-                <div class="main-info">
-                  <div class="left-info">
-                    <button>Descrição</button>
-                    <div class="description">
-                      <p>English Berry Trifle requires roughly 5 hours and 50 minutes from start to finish. This dessert has 268 calories, 4g of protein, and 10g of fat per serving. This gluten free recipe serves 16 and costs $1.11 per serving. 9 people have made this recipe and would make it again. It is an affordable recipe for fans of European food. A mixture of sugar, strawberries, pound cake, and a handful of other ingredients are all it takes to make this recipe so yummy. It is brought to you by Foodista. All things considered, we decided this recipe deserves a spoonacular score of 24%. This score is not so excellent. Similar recipes include English Trifle, English Trifle, and Old English Trifle.</p>
-                    </div>
-
-
-                    <button>Ingredientes</button>
-                    <div class="ingredients-container">
-                      <span>
-                        Ovos
-                      </span>
-                      <span>
-                        Ovos
-                      </span>
-                      <span>
-                        Ovos
-                      </span>
-                      <span>
-                        Ovos
-                      </span>
-                      <span>
-                        Ovos
-                      </span>
-
-                      
-                    </div>
-
-                    <button>Modo de preparo</button>
-                    <div class="preparation-container">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                      </p>
-                    </div>
-
-                    <button>Info adicionais</button>
-                    <div class="additional-info-container">
-                      <span>
-                        <i class="fa-solid fa-clock"></i>
-                        Preço: $ 10,00
-                      </span>
-
-                      <span>
-                        <i class="fa-solid fa-clock"></i>
-                        Likes: 100
-                      </span>
-
-                      <span>
-                        <i class="fa-solid fa-clock"></i>
-                        Avaliação: 4.5
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="right-info">
-                    <img src="./image.png" alt="">
-                    </div>
-                </div> -->
-
-              </div>
-              <!-- Javascript -->
-            </div>
+      <div class="modal-receita-container">
+        <!-- Javascript -->
       </div>
     </section>
 
