@@ -1,9 +1,9 @@
-const apiKey = "2eabe7358cbf40fb9b8fbbf1457849c6";
+const apiKey = "cb880b0e01b44c0a9f8799e352301e27";
 
 let receita = document.querySelector(".receita-destaque-info");
 let receitaRight = document.querySelector(".receita-right");
 
-function ModelCard(divModal, recipe){
+function ModelCard(divModal, recipe) {
   divModal.classList.add("modal-receita");
   divModal.innerHTML = `
        <button class="btn-receita-close">
@@ -36,13 +36,14 @@ function ModelCard(divModal, recipe){
 
           <button>Ingredientes</button>
           <div class="ingredients-container">
-            ${recipe.extendedIngredients.map(
-              (ingredient) => `
-              <span>
-                ${ingredient.original}
-              </span>
-            `
-            )}
+            <h3>Lista de Ingredientes</h3>
+            <ol>
+              ${recipe.extendedIngredients.map(
+                (ingredient) => `
+                  <li>${ingredient.original}</li>
+              `
+              )}
+            </ol>
           </div>
           <button>Modo de preparo</button>
           <div class="preparation-container">
@@ -65,15 +66,107 @@ function ModelCard(divModal, recipe){
 
             <span>
               <i class="fa-solid fa-clock"></i>
-              Avaliação: ${recipe.spoonacularScore >= 10 ? 10 : recipe.spoonacularScore.toFixed(1)}
+              Avaliação: ${
+                recipe.spoonacularScore >= 10
+                  ? 10
+                  : recipe.spoonacularScore.toFixed(1)
+              }
             </span>
           </div>
         </div>
-        <div class="right-info">
-          <img src="${recipe.image}" alt="">
-          </div>
+
       </div>
 `;
+}
+
+function BoxReceitas(div, recipe) {
+  div.classList.add("box-receita");
+  div.innerHTML = `
+  <div class="box-receita-img">
+  <img src="${recipe.image}" alt="imagem" />
+  </div>
+  <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
+      <div class="box-receita-info">
+        <span> <i class="fa-solid fa-clock"></i> ${
+          recipe.readyInMinutes
+        } minutos</span>
+      </div>  
+      <div class="box-receita-btn">
+        <button class="btn-receita" data-id="${recipe.id}">
+          <i class="fa-solid fa-hand-pointer"></i>
+          Ver receita</button>
+        <button class="btn-receita-favoritar">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+  `;
+}
+
+function SearchReceitas(query) {
+  let boxReceitaInfo = document.querySelector(".receita-content");
+  fetch(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      data.results.forEach((recipe) => {
+        let div = document.createElement("div");
+        BoxReceitas(div, recipe);
+
+        let btnReceita = div.querySelector(".btn-receita");
+        btnReceita.addEventListener("click", (e) => {
+          let modalReceita = document.querySelector(".modal-receita-container");
+          modalReceita.style.display = "block";
+          e.preventDefault();
+          let id = e.target.dataset.id;
+          console.log(id);
+          fetch(
+            `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
+          )
+            .then((response) => response.json())
+            .then((recipe) => {
+              let divModal = document.createElement("div");
+              ModelCard(divModal, recipe);
+              modalReceita.appendChild(divModal);
+              let btnReceitaClose =
+                divModal.querySelector(".btn-receita-close");
+              btnReceitaClose.addEventListener("click", () => {
+                modalReceita.style.display = "none";
+              });
+            });
+        });
+
+        boxReceitaInfo.appendChild(div);
+      });
+    });
+}
+
+function RandomReceitas() {
+  let boxReceitaInfo = document.querySelector(".receita-content");
+  fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
+    .then((response) => response.json())
+    .then((data) => {
+      data.recipes.forEach((recipe) => {
+        let div = document.createElement("div");
+        BoxReceitas(div, recipe);
+
+        let btnReceita = div.querySelector(".btn-receita");
+        btnReceita.addEventListener("click", (e) => {
+          let modalReceita = document.querySelector(".modal-receita-container");
+          modalReceita.style.display = "block";
+          e.preventDefault();
+          let divModal = document.createElement("div");
+          ModelCard(divModal, recipe);
+          modalReceita.appendChild(divModal);
+          let btnReceitaClose = divModal.querySelector(".btn-receita-close");
+          btnReceitaClose.addEventListener("click", () => {
+            modalReceita.style.display = "none";
+          });
+        });
+        boxReceitaInfo.appendChild(div);
+      });
+    });
 }
 
 fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
@@ -89,7 +182,6 @@ fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
       img.classList.add("receita-destaque-img");
       receitaRight.appendChild(img);
       div.innerHTML = `
-        
                     <h1>${recipe.title}</h1>
                     <p>${recipe.summary.slice(0, 300)}...</p>
                     <div class="receita-destaque-info-box">
@@ -127,108 +219,38 @@ btnReceitaSearch.addEventListener("click", () => {
   SearchReceitas(inputReceitaSearch.value);
 });
 
-function SearchReceitas(query) {
-  let boxReceitaInfo = document.querySelector(".receita-content");
-  fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      data.results.forEach((recipe) => {
-        let div = document.createElement("div");
-        div.classList.add("box-receita");
-        div.innerHTML = `
-        <div class="box-receita-img">
-        <img src="${recipe.image}" alt="imagem" />
-        </div>
-        <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
-            <div class="box-receita-info">
-              <span> <i class="fa-solid fa-clock"></i> ${
-                recipe.readyInMinutes
-              } minutos</span>
-            </div>  
-            <div class="box-receita-btn">
-              <button class="btn-receita" data-id="${recipe.id}">
-                <i class="fa-solid fa-hand-pointer"></i>
-                Ver receita</button>
-              <button class="btn-receita-favoritar">
-                <i class="fa-solid fa-heart"></i>
-              </button>
-            </div>
-        `;
-
-        let btnReceita = div.querySelector(".btn-receita");
-        btnReceita.addEventListener("click", (e) => {
-          let modalReceita = document.querySelector(".modal-receita-container");
-          modalReceita.style.display = "block";
-          e.preventDefault();
-          let id = e.target.dataset.id;
-          console.log(id);
-          fetch(
-            `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
-          )
-            .then((response) => response.json())
-            .then((recipe) => {
-              let divModal = document.createElement("div");
-              ModelCard(divModal, recipe)
-              modalReceita.appendChild(divModal);
-              let btnReceitaClose = divModal.querySelector(".btn-receita-close");
-              btnReceitaClose.addEventListener("click", () => {
-                modalReceita.style.display = "none";
-              });
-            });
-        });
-
-        boxReceitaInfo.appendChild(div);
-      });
-    });
-}
-
-function RandomReceitas() {
-  let boxReceitaInfo = document.querySelector(".receita-content");
-  fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
-    .then((response) => response.json())
-    .then((data) => {
-      data.recipes.forEach((recipe) => {
-        let div = document.createElement("div");
-        div.classList.add("box-receita");
-        div.innerHTML = `
-        <div class="box-receita-img">
-        <img src="${recipe.image}" alt="imagem" />
-        </div>
-        <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
-            <div class="box-receita-info">
-              <span> <i class="fa-solid fa-clock"></i> ${
-                recipe.readyInMinutes
-              } minutos</span>
-            </div>  
-            <div class="box-receita-btn">
-              <button class="btn-receita" data-id="${recipe.id}">
-                <i class="fa-solid fa-hand-pointer"></i>
-                Ver receita</button>
-              <button class="btn-receita-favoritar">
-                <i class="fa-solid fa-heart"></i>
-              </button>
-            </div>
-        `;
-
-        let btnReceita = div.querySelector(".btn-receita");
-        btnReceita.addEventListener("click", (e) => {
-          let modalReceita = document.querySelector(".modal-receita-container");
-          modalReceita.style.display = "block";
-          e.preventDefault();
-          let divModal = document.createElement("div");
-          ModelCard(divModal, recipe)
-          modalReceita.appendChild(divModal);
-          let btnReceitaClose = divModal.querySelector(".btn-receita-close");
-          btnReceitaClose.addEventListener("click", () => {
-            modalReceita.style.display = "none";
-          });
-        });
-        boxReceitaInfo.appendChild(div);
-      });
-    });
-}
-
 RandomReceitas();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const colaborados = document.querySelectorAll('.colaborado');
+  
+  colaborados.forEach((colaborado, index) => {
+    colaborado.style.opacity = '0';
+    colaborado.style.transform = 'translateY(30px)';
+    
+    setTimeout(() => {
+      colaborado.style.transition = 'all 0.6s ease';
+      colaborado.style.opacity = '1';
+      colaborado.style.transform = 'translateY(0)';
+    }, index * 200);
+  });
+  
+  colaborados.forEach(colaborado => {
+    colaborado.addEventListener('click', function() {
+      
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 150);
+      
+    });
+    
+    colaborado.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px) scale(1.05)';
+    });
+    
+    colaborado.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+});
