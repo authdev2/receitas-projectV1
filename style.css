@@ -309,8 +309,8 @@ nav .nav-links a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 10px 20px;
-    border: 1px solid #fe9a19;
-    background-color: #fe9a19;
+  border: 1px solid #fe9a19;
+  background-color: #fe9a19;
 }
 
 .receitas-container {
@@ -493,13 +493,14 @@ nav .nav-links a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: black;
   border-radius: 20px;
-  padding: 8px 15px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 500;
   font-size: 16px;
   font-family: "Syne", sans-serif;
+  padding: 10px 20px;
+  border: 1px solid #fe9a19;
+  background-color: #ff91032e;
 }
 
 .main-info {
@@ -524,17 +525,18 @@ nav .nav-links a:hover {
 }
 
 .left-info button {
-  background: black;
-  padding: 15px 30px;
-  border: none;
   border-radius: 25px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   font-size: 16px;
   font-family: "Syne", sans-serif;
   cursor: pointer;
   margin-bottom: 20px;
   letter-spacing: 0.5px;
+    padding: 10px 20px;
+  border: 1px solid #fe9a19;
+  background-color: #ff91032e;
+
 }
 
 .description p {
@@ -576,7 +578,7 @@ nav .nav-links a:hover {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: #FE9A19;
+  background: #fe9a19;
   border-radius: 2px;
 }
 
@@ -594,7 +596,7 @@ nav .nav-links a:hover {
   padding: 20px 25px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #FE9A19;
+  border-left: 4px solid #fe9a19;
   position: relative;
   transition: all 0.3s ease;
   font-weight: 500;
@@ -608,7 +610,7 @@ nav .nav-links a:hover {
   left: -12px;
   top: 50%;
   transform: translateY(-50%);
-  background: #FE9A19;
+  background: #fe9a19;
   color: white;
   width: 24px;
   height: 24px;
@@ -651,15 +653,15 @@ nav .nav-links a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #9c9c9c;
-  padding: 10px 20px;
   border-radius: 15px;
   font-weight: 500;
+  padding: 10px 20px;
+    border: 1px solid #fe9a19;
+    background-color: #ff91032e;
 }
 
 .additional-info-container span i {
-  color: #FE9A19;
-  border: 1px solid #000000;
+  color: #fe9a19;
   padding: 5px;
   border-radius: 50%;
 }
@@ -692,7 +694,6 @@ nav .nav-links a:hover {
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
-
 
 .collaborations-container {
   padding: 10px;
@@ -751,157 +752,151 @@ nav .nav-links a:hover {
   font-weight: 600;
 }
 
-.mobile-memnu{
+.mobile-memnu {
   display: none;
 }
 
-.lins-mobile{
+.lins-mobile {
   display: none;
 }
 
-.active-mobile{
+.active-mobile {
   display: block;
 }
 
-#menu-mobile{
+#menu-mobile {
   background: transparent;
   padding: 15px;
   border: none;
   font-size: 20px;
 }
 
-@media screen and (max-width: 1600px){
-
+@media screen and (max-width: 1600px) {
   .main-content {
     gap: 0px;
-}
+  }
   .right-content img {
     width: 500px;
     height: 500px;
-}
+  }
 
-.left-content .left-content-span {
+  .left-content .left-content-span {
     padding: 5px 10px;
     margin-bottom: 30px;
     margin-top: 30px;
-}
+  }
 
-
-.all-info-left h1 {
+  .all-info-left h1 {
     font-size: 20px;
-}
+  }
 
-.all-info-left p {
+  .all-info-left p {
     font-size: 13px;
-}
+  }
 
-.btns-info-left button {
+  .btns-info-left button {
     padding: 6px 20px;
-}
+  }
 
-.orange-number {
+  .orange-number {
     font-size: 17px;
-}
+  }
 
-.text-reviews {
+  .text-reviews {
     font-size: 15px;
-}
+  }
 
-
-.collaborations-container {
+  .collaborations-container {
     margin-top: 10px;
-}
+  }
 
-.colaborado {
+  .colaborado {
     padding: 10px 6px;
-}
+  }
 
-.colaborado span{
-  font-size: 13px;
-}
-
-
-.receita-left h1 {
-    font-size: 20px;
-}
-.receita-left p {
+  .colaborado span {
     font-size: 13px;
-}
+  }
 
-.box-info {
+  .receita-left h1 {
+    font-size: 20px;
+  }
+  .receita-left p {
+    font-size: 13px;
+  }
+
+  .box-info {
     padding: 5px 10px;
-}
+  }
 
-.receita-right .receita-destaque-img {
+  .receita-right .receita-destaque-img {
     width: 350px;
-}
+  }
 
-.info-search h2 {
+  .info-search h2 {
     font-size: 22px;
-}
+  }
 
-.info-search p {
+  .info-search p {
     font-size: 14px;
-}
+  }
 
-.search-input h3 {
+  .search-input h3 {
     font-size: 17px;
-}
+  }
 
-.search-input input {
+  .search-input input {
     padding: 10px 20px;
-}
-.btn-receita {
+  }
+  .btn-receita {
     font-size: 12px;
-}
+  }
 
-.box-receita-title {
+  .box-receita-title {
     font-size: 17px;
-}
+  }
 
-.box-receita {
+  .box-receita {
     height: 380px;
-}
-
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .all-info-left p {
     max-width: 400px;
-}
+  }
 
-    .right-content img {
-        width: 300px;
-        height: 300px;
-    }
+  .right-content img {
+    width: 300px;
+    height: 300px;
+  }
 
-    .box-receita {
+  .box-receita {
     height: 450px;
     width: 250px;
-}
+  }
 }
 @media screen and (max-width: 800px) {
   .receita-destaque-content {
     flex-direction: column;
     text-align: center;
-}
+  }
 
-.info-search {
+  .info-search {
     margin-top: 200px;
-}
+  }
 
-.main-content {
+  .main-content {
     flex-direction: column;
     margin-top: 150px;
-}
+  }
 
-    .collaborations-container {
-        margin-top: 200px;
-    }
+  .collaborations-container {
+    margin-top: 200px;
+  }
 
-    .main-info {
-    display: flex
-;
+  .main-info {
+    display: flex;
     justify-content: space-around;
     height: 600px;
     max-height: 600px;
@@ -910,9 +905,8 @@ nav .nav-links a:hover {
     background-color: #efefef;
     box-shadow: 3px 3px 5px 1px #c4c4c4;
     gap: 100px;
+  }
 }
-}
-
 
 /* @media screen and (max-width: 600px) {
   .nav-links{
@@ -934,15 +928,14 @@ nav .nav-links a:hover {
 } */
 
 @media screen and (max-width: 600px) {
-
-  .nav-links{
+  .nav-links {
     display: none;
   }
 
-  .mobile-memnu{
-  display: block;
-  text-align: center;
-}
+  .mobile-memnu {
+    display: block;
+    text-align: center;
+  }
 
   .nav-logo h2 {
     font-size: 16px;
@@ -1238,7 +1231,7 @@ nav .nav-links a:hover {
     display: none;
     width: 100%;
     background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
   }
 
