@@ -8,7 +8,7 @@
 
 🎯 Design elegante e atrativo
 
-<img width="656" height="165" alt="image" src="https://github.com/user-attachments/assets/1992d5a6-9340-43d0-8dbc-7f1e0f59ceb8" />
+<img width="489" height="152" alt="image" src="https://github.com/user-attachments/assets/02336466-f3aa-4e51-95db-9635e9046d81" />
 
 
 <img width="1369" height="937" alt="image" src="https://github.com/user-attachments/assets/86af1253-1bf6-49b2-8711-357648e2656b" />
