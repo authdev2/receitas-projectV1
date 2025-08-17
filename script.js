@@ -1,4 +1,4 @@
-const apiKey = "f68a966bdd1f47128c91fe285a59b528";
+const apiKey = "2eabe7358cbf40fb9b8fbbf1457849c6";
 
 let receita = document.querySelector(".receita-destaque-info");
 let receitaRight = document.querySelector(".receita-right");
