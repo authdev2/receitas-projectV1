@@ -8,12 +8,14 @@
 
 🎯 Design elegante e atrativo
 
+<img width="656" height="165" alt="image" src="https://github.com/user-attachments/assets/1992d5a6-9340-43d0-8dbc-7f1e0f59ceb8" />
 
-<img width="1837" height="928" alt="image" src="https://github.com/user-attachments/assets/ff032aa5-a674-49d6-8d48-68f22fd5f212" />
-<img width="1267" height="654" alt="image" src="https://github.com/user-attachments/assets/eb064e3e-2309-414f-9400-dd7c93ee7c35" />
-<img width="1096" height="612" alt="image" src="https://github.com/user-attachments/assets/2130bf07-f18c-45fe-b3b9-f3617ab771d7" />
-<img width="1678" height="926" alt="image" src="https://github.com/user-attachments/assets/b4b1f7a6-3200-46c2-827f-b1728fc7162d" />
-<img width="1700" height="843" alt="image" src="https://github.com/user-attachments/assets/42e50a64-a46b-4f9e-8878-9ebf92d7e0bf" />
-<img width="655" height="521" alt="image" src="https://github.com/user-attachments/assets/7ba04d30-1c5b-45d5-8854-1caa16e9ffc2" />
-<img width="1120" height="594" alt="image" src="https://github.com/user-attachments/assets/9f63c45a-3c12-49a5-bb8b-f756f743cb66" />
-<img width="907" height="244" alt="image" src="https://github.com/user-attachments/assets/68d78f9b-30cf-452b-80c7-609a4e67092d" />
+
+<img width="1369" height="937" alt="image" src="https://github.com/user-attachments/assets/86af1253-1bf6-49b2-8711-357648e2656b" />
+<img width="1219" height="632" alt="image" src="https://github.com/user-attachments/assets/d922d486-5194-4512-a5cc-725398268989" />
+<img width="927" height="583" alt="image" src="https://github.com/user-attachments/assets/173bf3ab-6c4f-45c7-a9d3-8255e8b6c337" />
+<img width="1558" height="889" alt="image" src="https://github.com/user-attachments/assets/3b4c2594-f01a-4a12-9cc2-f8679244c400" />
+<img width="1477" height="600" alt="image" src="https://github.com/user-attachments/assets/2100bc2a-b4a2-4d0b-8096-10010f65382c" />
+<img width="703" height="501" alt="image" src="https://github.com/user-attachments/assets/eceeb80c-62ab-4240-a51c-b0e0401da1ac" />
+<img width="1019" height="446" alt="image" src="https://github.com/user-attachments/assets/ca99060b-f003-4bd1-9654-dbc7fb5d1681" />
+<img width="845" height="208" alt="image" src="https://github.com/user-attachments/assets/80e77e37-b17c-456e-9a36-3a8452e54899" />
