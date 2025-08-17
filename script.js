@@ -1,10 +1,11 @@
-const apiKey = "4d91978896c44dd687c57adef2c78ed6";
+const apiKey = "f68a966bdd1f47128c91fe285a59b528";
 
 let receita = document.querySelector(".receita-destaque-info");
 let receitaRight = document.querySelector(".receita-right");
 
 function ModelCard(divModal, recipe) {
   divModal.classList.add("modal-receita");
+  divModal.innerHTML = "";
   divModal.innerHTML = `
        <button class="btn-receita-close">
         <i class="fa-solid fa-xmark"></i>
@@ -81,6 +82,7 @@ function ModelCard(divModal, recipe) {
 
 function BoxReceitas(div, recipe) {
   div.classList.add("box-receita");
+  div.innerHTML = "";
   div.innerHTML = `
   <div class="box-receita-img">
   <img src="${recipe.image}" alt="imagem" />
@@ -95,9 +97,6 @@ function BoxReceitas(div, recipe) {
         <button class="btn-receita" data-id="${recipe.id}">
           <i class="fa-solid fa-hand-pointer"></i>
           Ver receita</button>
-        <button class="btn-receita-favoritar">
-          <i class="fa-solid fa-heart"></i>
-        </button>
       </div>
   `;
 }
@@ -109,9 +108,11 @@ function SearchReceitas(query) {
   )
     .then((response) => response.json())
     .then((data) => {
+      boxReceitaInfo.innerHTML = "";
       console.log(data);
       data.results.forEach((recipe) => {
         let div = document.createElement("div");
+        div.innerHTML = "";
         BoxReceitas(div, recipe);
 
         let btnReceita = div.querySelector(".btn-receita");
@@ -269,3 +270,4 @@ menuMobile.addEventListener("click", ()=>{
     dja.classList.add("fa-bars")
   }
 })
+

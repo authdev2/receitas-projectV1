@@ -123,8 +123,8 @@ nav .nav-links a:hover {
 }
 
 .right-content img {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
 }
 
 .receita-destaque {
@@ -188,7 +188,6 @@ nav .nav-links a:hover {
   padding: 10px 40px;
   background: #fe9a19;
   color: white;
-  /* border-radius: 10px; */
   font-weight: 600;
   font-size: 17px;
   display: inline-block;
@@ -216,16 +215,11 @@ nav .nav-links a:hover {
   justify-content: center;
   width: 400px;
   gap: 10px;
-  /* margin-right: 100px; */
 }
 
 .receitas-section {
   padding: 80px 0;
   min-height: 100vh;
-  /* background-image: url(./images/ingredientes-alimentares-italianos.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
 }
 
 .receita-content {
@@ -247,6 +241,7 @@ nav .nav-links a:hover {
   justify-content: center;
   padding: 20px;
   background-color: #d9d9d952;
+  align-items: center;
 }
 
 .box-receita-img {
@@ -298,39 +293,26 @@ nav .nav-links a:hover {
   display: flex;
   gap: 10px;
   padding: 0 20px 20px 20px;
+  justify-content: center;
 }
 
 .btn-receita {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
   padding: 12px 20px;
   border: none;
-  background: black;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 25px;
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  padding: 10px 20px;
+    border: 1px solid #fe9a19;
+    background-color: #fe9a19;
 }
 
-.btn-receita-favoritar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border: 2px solid #e74c3c;
-  background: white;
-  color: #e74c3c;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 .receitas-container {
   display: flex;
   align-items: center;
@@ -442,11 +424,6 @@ nav .nav-links a:hover {
   margin-top: 10px;
 }
 
-.image-rotate {
-  width: 500px;
-  height: 500px;
-}
-
 .search-input-buttons button {
   background: white;
   padding: 12px 25px;
@@ -467,20 +444,6 @@ nav .nav-links a:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(254, 154, 25, 0.3);
 }
-.image-rotate {
-  animation: rotate 10s linear infinite;
-  position: relative;
-  top: -130px;
-}
-
-/* @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
 
 .modal-receita-container {
   display: none;
@@ -542,7 +505,6 @@ nav .nav-links a:hover {
 .main-info {
   display: flex;
   justify-content: space-around;
-  /* align-items: center; */
   height: 600px;
   max-height: 600px;
   overflow-y: auto;
@@ -731,55 +693,6 @@ nav .nav-links a:hover {
   transition: all 0.3s ease;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 30vh;
-  color: rgb(255 255 255);
-  background: linear-gradient(135deg, #0e0d0d, #1a1818);
-  margin-top: 100px;
-}
-
-.footer-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-left h2 {
-  color: white;
-  font-weight: 700;
-}
-
-.footer-left p {
-  max-width: 300px;
-  color: white;
-  line-height: 30px;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.footer-right {
-  display: flex;
-  gap: 150px;
-}
-
-.footer-right ul li {
-  list-style: none;
-  font-weight: 600;
-  font-size: 17px;
-}
-
-.footer-right ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-.footer-social-media {
-  display: flex;
-  gap: 30px;
-}
 
 .collaborations-container {
   padding: 10px;
@@ -970,6 +883,7 @@ nav .nav-links a:hover {
 @media screen and (max-width: 800px) {
   .receita-destaque-content {
     flex-direction: column;
+    text-align: center;
 }
 
 .info-search {
@@ -989,20 +903,18 @@ nav .nav-links a:hover {
     display: flex
 ;
     justify-content: space-around;
-    /* align-items: center; */
     height: 600px;
     max-height: 600px;
     overflow-y: auto;
     margin: 0;
     background-color: #efefef;
     box-shadow: 3px 3px 5px 1px #c4c4c4;
-    /* padding: 0 50px; */
     gap: 100px;
 }
 }
 
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .nav-links{
     display: none;
   }
@@ -1011,4 +923,367 @@ nav .nav-links a:hover {
   display: block;
   text-align: center;
 }
+
+.search-input input {
+  width: 300px;
+}
+
+.search-input button {
+  padding: 9px;
+}
+} */
+
+@media screen and (max-width: 600px) {
+
+  .nav-links{
+    display: none;
+  }
+
+  .mobile-memnu{
+  display: block;
+  text-align: center;
+}
+
+  .nav-logo h2 {
+    font-size: 16px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px;
+    margin-top: 50px;
+  }
+
+  .left-content {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .left-content .left-content-span {
+    font-size: 12px;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+  }
+
+  .all-info-left h1 {
+    margin-bottom: 15px;
+  }
+
+  .all-info-left p {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btns-info-left {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .btns-info-left button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .btns-info-left a {
+    font-size: 14px;
+  }
+
+  .quantity-reviews {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .orange-number {
+    font-size: 14px;
+  }
+
+  .text-reviews {
+    font-size: 11px;
+  }
+
+  .right-content img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .collaborations-container {
+    margin-top: 40px;
+    padding: 15px;
+  }
+
+  .colaborados {
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .colaborado {
+    padding: 8px 15px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .colaborado span {
+    font-size: 11px;
+  }
+
+  .receita-destaque {
+    margin-top: 40px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .receita-destaque-content {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .receita-left h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .receita-left p {
+    font-size: 11px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+  .receita-right .receita-destaque-img {
+    width: 200px;
+  }
+
+  .receita-destaque-info-box {
+    width: 100%;
+    max-width: 250px;
+    gap: 6px;
+  }
+
+  .box-info {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .info-search {
+    margin-top: 40px;
+    padding: 20px 15px;
+  }
+
+  .info-search h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .info-search p {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+
+  .search-input {
+    gap: 15px;
+  }
+
+  .search-input h3 {
+    font-size: 14px;
+  }
+
+  .search-input input {
+    width: 100%;
+    max-width: 200px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .search-input-buttons {
+    gap: 8px;
+  }
+
+  .search-input-buttons button {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .receita-content {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .box-receita {
+    width: 200px;
+    height: 320px;
+  }
+
+  .box-receita-title {
+    font-size: 13px;
+    padding: 12px 12px 6px 12px;
+  }
+
+  .box-receita-info {
+    gap: 8px;
+    padding: 0 12px 8px 12px;
+  }
+
+  .box-receita-info span {
+    font-size: 9px;
+    padding: 4px 6px;
+  }
+
+  .btn-receita {
+    font-size: 9px;
+    padding: 6px 10px;
+  }
+
+  .modal-receita {
+    width: 98%;
+    height: 98vh;
+    margin: 5px;
+  }
+
+  .principal-info {
+    padding: 10px;
+  }
+
+  .info-receita {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-receita span {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .main-info {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .left-info {
+    padding-top: 15px;
+  }
+
+  .left-info button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .ingredients-container {
+    padding: 15px;
+  }
+
+  .ingredients-container h3 {
+    font-size: 14px;
+  }
+
+  .ingredients-container li {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .right-info img {
+    width: 180px;
+    height: 120px;
+  }
+
+  .additional-info-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+  }
+
+  .additional-info-container span {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    padding: 25px 15px;
+    text-align: center;
+  }
+
+  .footer-left p {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .footer-right {
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .footer-social-media {
+    justify-content: center;
+  }
+
+  .footer-left h2 {
+    font-size: 16px;
+  }
+
+  .footer-right ul li {
+    font-size: 12px;
+  }
+
+  .lins-mobile {
+    display: none;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+
+  .lins-mobile a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #707070;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+
+  .lins-mobile a:last-child {
+    border-bottom: none;
+  }
+
+  .lins-mobile.active-mobile {
+    display: block;
+  }
+
+  .btn-receita-favoritar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .search-input-input button {
+    padding: 8px 15px;
+  }
+
+  .receita-destaque-span {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .receita-left button {
+    padding: 15px 25px;
+    font-size: 14px;
+  }
+
+  .receita-dia-box {
+    margin-bottom: 20px;
+  }
+
+  .receita-left button {
+    margin-top: 20px;
+  }
 }
