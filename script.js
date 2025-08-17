@@ -254,3 +254,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+const menuMobile = document.getElementById("menu-mobile")
+menuMobile.addEventListener("click", ()=>{
+  const menuBlock = document.querySelector(".lins-mobile")
+
+  menuBlock.classList.toggle("active-mobile")
+  let dja = document.querySelector("#menu-mobile i")
+  if(dja.classList.contains("fa-bars")){
+    dja.classList.remove("fa-bars")
+    dja.classList.add("fa-xmark")
+  }else{
+    dja.classList.remove("fa-xmark")
+    dja.classList.add("fa-bars")
+  }
+})

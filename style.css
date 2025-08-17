@@ -239,20 +239,18 @@ nav .nav-links a:hover {
 
 .box-receita {
   border-radius: 20px;
-  overflow: hidden;
   position: relative;
   height: 450px;
   width: 300px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 20px;
   background-color: #d9d9d952;
 }
 
 .box-receita-img {
   position: relative;
-  height: 250px;
-  overflow: hidden;
 }
 
 .box-receita-img img {
@@ -269,7 +267,6 @@ nav .nav-links a:hover {
   padding: 20px 20px 10px 20px;
   margin: 0;
   line-height: 1.4;
-  flex-grow: 1;
 }
 
 .box-receita-info {
@@ -304,7 +301,6 @@ nav .nav-links a:hover {
 }
 
 .btn-receita {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,7 +353,6 @@ nav .nav-links a:hover {
   font-weight: 700;
   text-align: center;
   position: relative;
-  z-index: 1;
 }
 
 .info-search h2::after {
@@ -841,4 +836,179 @@ nav .nav-links a:hover {
   background-color: #fe9a19;
   color: white;
   font-weight: 600;
+}
+
+.mobile-memnu{
+  display: none;
+}
+
+.lins-mobile{
+  display: none;
+}
+
+.active-mobile{
+  display: block;
+}
+
+#menu-mobile{
+  background: transparent;
+  padding: 15px;
+  border: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1600px){
+
+  .main-content {
+    gap: 0px;
+}
+  .right-content img {
+    width: 500px;
+    height: 500px;
+}
+
+.left-content .left-content-span {
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+.all-info-left h1 {
+    font-size: 20px;
+}
+
+.all-info-left p {
+    font-size: 13px;
+}
+
+.btns-info-left button {
+    padding: 6px 20px;
+}
+
+.orange-number {
+    font-size: 17px;
+}
+
+.text-reviews {
+    font-size: 15px;
+}
+
+
+.collaborations-container {
+    margin-top: 10px;
+}
+
+.colaborado {
+    padding: 10px 6px;
+}
+
+.colaborado span{
+  font-size: 13px;
+}
+
+
+.receita-left h1 {
+    font-size: 20px;
+}
+.receita-left p {
+    font-size: 13px;
+}
+
+.box-info {
+    padding: 5px 10px;
+}
+
+.receita-right .receita-destaque-img {
+    width: 350px;
+}
+
+.info-search h2 {
+    font-size: 22px;
+}
+
+.info-search p {
+    font-size: 14px;
+}
+
+.search-input h3 {
+    font-size: 17px;
+}
+
+.search-input input {
+    padding: 10px 20px;
+}
+.btn-receita {
+    font-size: 12px;
+}
+
+.box-receita-title {
+    font-size: 17px;
+}
+
+.box-receita {
+    height: 380px;
+}
+
+}
+
+@media screen and (max-width: 1000px) {
+  .all-info-left p {
+    max-width: 400px;
+}
+
+    .right-content img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .box-receita {
+    height: 450px;
+    width: 250px;
+}
+}
+@media screen and (max-width: 800px) {
+  .receita-destaque-content {
+    flex-direction: column;
+}
+
+.info-search {
+    margin-top: 200px;
+}
+
+.main-content {
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+    .collaborations-container {
+        margin-top: 200px;
+    }
+
+    .main-info {
+    display: flex
+;
+    justify-content: space-around;
+    /* align-items: center; */
+    height: 600px;
+    max-height: 600px;
+    overflow-y: auto;
+    margin: 0;
+    background-color: #efefef;
+    box-shadow: 3px 3px 5px 1px #c4c4c4;
+    /* padding: 0 50px; */
+    gap: 100px;
+}
+}
+
+
+@media screen and (max-width: 600px) {
+  .nav-links{
+    display: none;
+  }
+
+  .mobile-memnu{
+  display: block;
+  text-align: center;
+}
 }
