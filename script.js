@@ -101,62 +101,31 @@ function BoxReceitas(div, recipe) {
   `;
 }
 
-function SearchReceitas(query) {
+async function SearchReceitas(query) {
   let boxReceitaInfo = document.querySelector(".receita-content");
-  fetch(
+  let response = await fetch(
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      boxReceitaInfo.innerHTML = "";
-      console.log(data);
-      data.results.forEach((recipe) => {
-        let div = document.createElement("div");
-        div.innerHTML = "";
-        BoxReceitas(div, recipe);
+  );
+  let data = await response.json();
+  boxReceitaInfo.innerHTML = "";
+  console.log(data);
+  data.results.forEach((recipe) => {
+    let div = document.createElement("div");
+    div.innerHTML = "";
+    BoxReceitas(div, recipe);
 
-        let btnReceita = div.querySelector(".btn-receita");
-        btnReceita.addEventListener("click", (e) => {
-          let modalReceita = document.querySelector(".modal-receita-container");
-          modalReceita.style.display = "block";
-          e.preventDefault();
-          let id = e.target.dataset.id;
-          console.log(id);
-          fetch(
-            `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
-          )
-            .then((response) => response.json())
-            .then((recipe) => {
-              let divModal = document.createElement("div");
-              ModelCard(divModal, recipe);
-              modalReceita.appendChild(divModal);
-              let btnReceitaClose =
-                divModal.querySelector(".btn-receita-close");
-              btnReceitaClose.addEventListener("click", () => {
-                modalReceita.style.display = "none";
-              });
-            });
-        });
-
-        boxReceitaInfo.appendChild(div);
-      });
-    });
-}
-
-function RandomReceitas() {
-  let boxReceitaInfo = document.querySelector(".receita-content");
-  fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`)
-    .then((response) => response.json())
-    .then((data) => {
-      data.recipes.forEach((recipe) => {
-        let div = document.createElement("div");
-        BoxReceitas(div, recipe);
-
-        let btnReceita = div.querySelector(".btn-receita");
-        btnReceita.addEventListener("click", (e) => {
-          let modalReceita = document.querySelector(".modal-receita-container");
-          modalReceita.style.display = "block";
-          e.preventDefault();
+    let btnReceita = div.querySelector(".btn-receita");
+    btnReceita.addEventListener("click", (e) => {
+      let modalReceita = document.querySelector(".modal-receita-container");
+      modalReceita.style.display = "block";
+      e.preventDefault();
+      let id = e.target.dataset.id;
+      console.log(id);
+      fetch(
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
+      )
+        .then((response) => response.json())
+        .then((recipe) => {
           let divModal = document.createElement("div");
           ModelCard(divModal, recipe);
           modalReceita.appendChild(divModal);
@@ -165,9 +134,37 @@ function RandomReceitas() {
             modalReceita.style.display = "none";
           });
         });
-        boxReceitaInfo.appendChild(div);
+    });
+
+    boxReceitaInfo.appendChild(div);
+  });
+}
+
+async function RandomReceitas() {
+  let boxReceitaInfo = document.querySelector(".receita-content");
+  let response = await fetch(
+    `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`
+  );
+  let data = await response.json();
+  data.recipes.forEach((recipe) => {
+    let div = document.createElement("div");
+    BoxReceitas(div, recipe);
+
+    let btnReceita = div.querySelector(".btn-receita");
+    btnReceita.addEventListener("click", (e) => {
+      let modalReceita = document.querySelector(".modal-receita-container");
+      modalReceita.style.display = "block";
+      e.preventDefault();
+      let divModal = document.createElement("div");
+      ModelCard(divModal, recipe);
+      modalReceita.appendChild(divModal);
+      let btnReceitaClose = divModal.querySelector(".btn-receita-close");
+      btnReceitaClose.addEventListener("click", () => {
+        modalReceita.style.display = "none";
       });
     });
+    boxReceitaInfo.appendChild(div);
+  });
 }
 
 fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
@@ -222,52 +219,49 @@ btnReceitaSearch.addEventListener("click", () => {
 
 RandomReceitas();
 
-document.addEventListener('DOMContentLoaded', function() {
-  const colaborados = document.querySelectorAll('.colaborado');
-  
+document.addEventListener("DOMContentLoaded", function () {
+  const colaborados = document.querySelectorAll(".colaborado");
+
   colaborados.forEach((colaborado, index) => {
-    colaborado.style.opacity = '0';
-    colaborado.style.transform = 'translateY(30px)';
-    
+    colaborado.style.opacity = "0";
+    colaborado.style.transform = "translateY(30px)";
+
     setTimeout(() => {
-      colaborado.style.transition = 'all 0.6s ease';
-      colaborado.style.opacity = '1';
-      colaborado.style.transform = 'translateY(0)';
+      colaborado.style.transition = "all 0.6s ease";
+      colaborado.style.opacity = "1";
+      colaborado.style.transform = "translateY(0)";
     }, index * 200);
   });
-  
-  colaborados.forEach(colaborado => {
-    colaborado.addEventListener('click', function() {
-      
-      this.style.transform = 'scale(0.95)';
+
+  colaborados.forEach((colaborado) => {
+    colaborado.addEventListener("click", function () {
+      this.style.transform = "scale(0.95)";
       setTimeout(() => {
-        this.style.transform = 'scale(1)';
+        this.style.transform = "scale(1)";
       }, 150);
-      
     });
-    
-    colaborado.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-10px) scale(1.05)';
+
+    colaborado.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-10px) scale(1.05)";
     });
-    
-    colaborado.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0) scale(1)';
+
+    colaborado.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0) scale(1)";
     });
   });
 });
 
-const menuMobile = document.getElementById("menu-mobile")
-menuMobile.addEventListener("click", ()=>{
-  const menuBlock = document.querySelector(".lins-mobile")
+const menuMobile = document.getElementById("menu-mobile");
+menuMobile.addEventListener("click", () => {
+  const menuBlock = document.querySelector(".lins-mobile");
 
-  menuBlock.classList.toggle("active-mobile")
-  let dja = document.querySelector("#menu-mobile i")
-  if(dja.classList.contains("fa-bars")){
-    dja.classList.remove("fa-bars")
-    dja.classList.add("fa-xmark")
-  }else{
-    dja.classList.remove("fa-xmark")
-    dja.classList.add("fa-bars")
+  menuBlock.classList.toggle("active-mobile");
+  let dja = document.querySelector("#menu-mobile i");
+  if (dja.classList.contains("fa-bars")) {
+    dja.classList.remove("fa-bars");
+    dja.classList.add("fa-xmark");
+  } else {
+    dja.classList.remove("fa-xmark");
+    dja.classList.add("fa-bars");
   }
-})
-
+});
