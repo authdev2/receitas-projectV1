@@ -1,5 +1,3 @@
-const apiKey = "2eabe7358cbf40fb9b8fbbf1457849c6";
-
 let receita = document.querySelector(".receita-destaque-info");
 let receitaRight = document.querySelector(".receita-right");
 
@@ -11,19 +9,19 @@ function ModelCard(divModal, recipe) {
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="principal-info">
-        <h1>${recipe.title}</h1>
+        <h1>${recipe.nome}</h1>
         <div class="info-receita">
           <span>
             <i class="fa-solid fa-clock"></i>
-            ${recipe.readyInMinutes} minutos
+            ${recipe.minutos} minutos
           </span>
           <span>
             <i class="fa-solid fa-users"></i>
-            ${recipe.servings} porções
+            ${recipe.porcoes} porções
           </span>
           <span>
             <i class="fa-solid fa-users"></i>
-            ${recipe.healthScore}% saudável
+            ${recipe.nivelSaudavel}% saudável
           </span>
         </div>
       </div>
@@ -32,16 +30,16 @@ function ModelCard(divModal, recipe) {
         <div class="left-info">
           <button>Descrição</button>
           <div class="description">
-            <p>${recipe.summary}</p>
+            <p>${recipe.descricao}</p>
           </div>
 
           <button>Ingredientes</button>
           <div class="ingredients-container">
             <h3>Lista de Ingredientes</h3>
             <ol>
-              ${recipe.extendedIngredients.map(
+              ${recipe.ingredientes.map(
                 (ingredient) => `
-                  <li>${ingredient.original}</li>
+                  <li>${ingredient}</li>
               `
               )}
             </ol>
@@ -49,7 +47,7 @@ function ModelCard(divModal, recipe) {
           <button>Modo de preparo</button>
           <div class="preparation-container">
             <p>
-              ${recipe.instructions}
+              ${recipe.modoPreparo}
             </p>
           </div>
 
@@ -57,20 +55,20 @@ function ModelCard(divModal, recipe) {
           <div class="additional-info-container">
             <span>
               <i class="fa-solid fa-clock"></i>
-              Preço: $ ${recipe.pricePerServing}
+              Preço: $ ${recipe.preco}
             </span>
 
             <span>
               <i class="fa-solid fa-clock"></i>
-              Likes: ${recipe.aggregateLikes}
+              Likes: ${recipe.likes}
             </span>
 
             <span>
               <i class="fa-solid fa-clock"></i>
               Avaliação: ${
-                recipe.spoonacularScore >= 10
+                recipe.avaliacao >= 10
                   ? 10
-                  : recipe.spoonacularScore.toFixed(1)
+                  : recipe.avaliacao.toFixed(1)
               }
             </span>
           </div>
@@ -85,16 +83,16 @@ function BoxReceitas(div, recipe) {
   div.innerHTML = "";
   div.innerHTML = `
   <div class="box-receita-img">
-  <img src="${recipe.image}" alt="imagem" />
+  <img src="${recipe.imagem}" alt="imagem" />
   </div>
-  <h1 class="box-receita-title">${recipe.title.slice(0, 15)}...</h1>
+  <h1 class="box-receita-title">${recipe.nome.slice(0, 15)}...</h1>
       <div class="box-receita-info">
         <span> <i class="fa-solid fa-clock"></i> ${
-          recipe.readyInMinutes
+          recipe.minutos
         } minutos</span>
       </div>  
       <div class="box-receita-btn">
-        <button class="btn-receita" data-id="${recipe.id}">
+        <button class="btn-receita" data-id="${recipe.id}" data-nome="${recipe.nome}">
           <i class="fa-solid fa-hand-pointer"></i>
           Ver receita</button>
       </div>
@@ -104,36 +102,28 @@ function BoxReceitas(div, recipe) {
 async function SearchReceitas(query) {
   let boxReceitaInfo = document.querySelector(".receita-content");
   let response = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}`
+    `http://localhost:3000/receitas/searchCompleta/${query}`
   );
   let data = await response.json();
   boxReceitaInfo.innerHTML = "";
   console.log(data);
-  data.results.forEach((recipe) => {
+  data.forEach((recipe) => {
     let div = document.createElement("div");
     div.innerHTML = "";
     BoxReceitas(div, recipe);
 
     let btnReceita = div.querySelector(".btn-receita");
     btnReceita.addEventListener("click", (e) => {
+      let divModal = document.createElement("div");
       let modalReceita = document.querySelector(".modal-receita-container");
       modalReceita.style.display = "block";
       e.preventDefault();
-      let id = e.target.dataset.id;
-      console.log(id);
-      fetch(
-        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
-      )
-        .then((response) => response.json())
-        .then((recipe) => {
-          let divModal = document.createElement("div");
-          ModelCard(divModal, recipe);
-          modalReceita.appendChild(divModal);
-          let btnReceitaClose = divModal.querySelector(".btn-receita-close");
-          btnReceitaClose.addEventListener("click", () => {
-            modalReceita.style.display = "none";
-          });
-        });
+      ModelCard(divModal, recipe);
+      modalReceita.appendChild(divModal);
+      let btnReceitaClose = divModal.querySelector(".btn-receita-close");
+      btnReceitaClose.addEventListener("click", () => {
+        modalReceita.style.display = "none";
+      });
     });
 
     boxReceitaInfo.appendChild(div);
@@ -143,10 +133,11 @@ async function SearchReceitas(query) {
 async function RandomReceitas() {
   let boxReceitaInfo = document.querySelector(".receita-content");
   let response = await fetch(
-    `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`
+    `http://localhost:3000/receitas`
   );
   let data = await response.json();
-  data.recipes.forEach((recipe) => {
+  console.log(data);
+  data.forEach((recipe) => {
     let div = document.createElement("div");
     BoxReceitas(div, recipe);
 
@@ -167,40 +158,39 @@ async function RandomReceitas() {
   });
 }
 
-fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
+fetch(`http://localhost:3000/receitas/random`)
   .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    data.recipes.forEach((recipe) => {
+  .then((recipe) => {
       let div = document.createElement("div");
       let img = document.createElement("img");
       div.classList.add("receita-destaque-info");
-      img.src = recipe.image;
-      img.alt = recipe.title;
+      img.src = recipe.imagem;
+      img.alt = recipe.nome;
       img.classList.add("receita-destaque-img");
       receitaRight.appendChild(img);
+      console.log(recipe.imagem)
       div.innerHTML = `
-                    <h1>${recipe.title}</h1>
-                    <p>${recipe.summary.slice(0, 300)}...</p>
+                    <h1>${recipe.nome}</h1>
+                    <p>${recipe.descricao.slice(0, 300)}...</p>
                     <div class="receita-destaque-info-box">
 
                         <div class="box-info">
                             <i class="fa-solid fa-clock"></i>
                             <span>
-                                ${recipe.readyInMinutes} minutos
+                                ${recipe.minutos} minutos
                             </span>
 
                         </div>
                         <div class="box-info">
                             <i class="fa-solid fa-utensils"></i>
                             <span>
-                                ${recipe.servings} porções
+                                ${recipe.porcoes} porções
                             </span>
                         </div>
                         <div class="box-info">
                             <i class="fa-solid fa-star"></i>
                             <span>
-                                ${recipe.healthScore}% saudável
+                                ${recipe.nivelSaudavel}% saudável
                             </span>
                         </div>
                     </div>
@@ -209,7 +199,6 @@ fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`)
 
       receita.appendChild(div);
     });
-  });
 
 let btnReceitaSearch = document.querySelector(".btn-receita-search");
 let inputReceitaSearch = document.querySelector(".input-receita-search");
